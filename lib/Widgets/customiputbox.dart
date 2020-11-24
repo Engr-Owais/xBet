@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class MyCustomInputBox extends StatefulWidget {
@@ -54,7 +53,7 @@ class _MyCustomInputBoxState extends State<MyCustomInputBox> {
                   color: Colors.grey[350],
                   fontWeight: FontWeight.w600),
               contentPadding:
-                  EdgeInsets.symmetric(vertical:30, horizontal: 25),
+                  EdgeInsets.symmetric(vertical: 30, horizontal: 25),
               focusColor: HexColor('#FFA500'),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
