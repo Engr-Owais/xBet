@@ -12,7 +12,6 @@ class MyCustomInputBox extends StatefulWidget {
 
 class _MyCustomInputBoxState extends State<MyCustomInputBox> {
   bool isSubmitted = false;
-  final checkBoxIcon = 'assets/checkbox.svg';
 
   @override
   Widget build(BuildContext context) {
@@ -21,20 +20,21 @@ class _MyCustomInputBoxState extends State<MyCustomInputBox> {
         Align(
           alignment: Alignment.centerLeft,
           child: Padding(
-            padding: const EdgeInsets.only(left: 50.0, bottom: 8),
+            padding: const EdgeInsets.only(left: 10.0, bottom: 8),
             child: Text(
               widget.label,
               style: TextStyle(
                 fontFamily: 'Product Sans',
                 fontSize: 15,
-                color: Color(0xff8f9db5),
+                color: Colors.orange[800],
+                fontWeight: FontWeight.bold
               ),
             ),
           ),
         ),
         //
         Padding(
-          padding: const EdgeInsets.fromLTRB(40, 0, 40, 15),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: TextFormField(
             obscureText: widget.label == 'Password' ? true : false,
             // this can be changed based on usage -
@@ -50,19 +50,19 @@ class _MyCustomInputBoxState extends State<MyCustomInputBox> {
               hintText: widget.inputHint,
               hintStyle: TextStyle(
                   fontSize: 14,
-                  color: Colors.grey[350],
+                  color: Colors.white,
                   fontWeight: FontWeight.w600),
               contentPadding:
-                  EdgeInsets.symmetric(vertical: 30, horizontal: 25),
+                  EdgeInsets.symmetric(vertical: 20, horizontal: 25),
               focusColor: HexColor('#FFA500'),
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(40),
                 borderSide: BorderSide(color: HexColor('#FFA500')),
               ),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(40),
                 borderSide: BorderSide(
-                  color: Colors.grey[350],
+                  color: Colors.white,
                 ),
               ),
             ),

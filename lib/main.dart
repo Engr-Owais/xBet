@@ -1,6 +1,8 @@
 import 'package:edge_ui/Screens/login.dart';
 import 'package:flutter/material.dart';
 
+import 'Screens/sign_up.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'XBET EDGE',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: Colors.orange),
-      home: LoginPage(),
+      home: SignUpPage(),
     );
   }
 }
