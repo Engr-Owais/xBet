@@ -1,8 +1,6 @@
 import 'package:edge_ui/Screens/login.dart';
 import 'package:edge_ui/Widgets/customiputbox.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dropdown/flutter_dropdown.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 class SignUpPage extends StatelessWidget {
   @override
@@ -246,7 +244,9 @@ class SignUpPage extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(height: 50,),
+                          SizedBox(
+                            height: 50,
+                          ),
                         ],
                       ),
                     ),
