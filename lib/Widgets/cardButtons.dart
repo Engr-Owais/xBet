@@ -8,34 +8,33 @@ class CardHomeButtons extends StatefulWidget {
 }
 
 class _CardHomeButtonsState extends State<CardHomeButtons> {
+  Color _iconColor = Colors.white;
+
   @override
   Widget build(BuildContext context) {
     Widget _carBtn(Color color, String text) {
-      return Padding(
-        padding: const EdgeInsets.all(2.0),
+      return InkWell(
+        onTap: () {},
         child: Container(
-          height: 25,
-          width: 45,
+          height: MediaQuery.of(context).size.height * 0.03,
+          width: MediaQuery.of(context).size.width * 0.115,
           decoration: BoxDecoration(
+            color: color,
             borderRadius: BorderRadius.circular(40),
           ),
-          child: RaisedButton(
+          child: Align(
+            alignment: Alignment(0, 0),
             child: Text(
               text,
-              style: TextStyle(color: Colors.white, fontSize: 11),
+              style: TextStyle(color: Colors.white, fontSize: 12),
             ),
-            color: color,
-            onPressed: () {},
-            elevation: 0.0,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           ),
         ),
       );
     }
 
     return Container(
-      height: MediaQuery.of(context).size.height * 0.17,
+      height: MediaQuery.of(context).size.height * 0.14,
       decoration: new BoxDecoration(
         boxShadow: [
           new BoxShadow(
@@ -56,8 +55,7 @@ class _CardHomeButtonsState extends State<CardHomeButtons> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 2.0, horizontal: 8.0),
+                    padding: const EdgeInsets.fromLTRB(8.0, 2.0, 0.0, 1.0),
                     child: Text(
                       "Swindon v Binton",
                       style: TextStyle(
@@ -67,8 +65,7 @@ class _CardHomeButtonsState extends State<CardHomeButtons> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 2.0, horizontal: 4.0),
+                    padding: const EdgeInsets.fromLTRB(8.0, 2.0, 4.0, 1.0),
                     child: Row(
                       children: [
                         Text(
@@ -76,22 +73,15 @@ class _CardHomeButtonsState extends State<CardHomeButtons> {
                           style: TextStyle(
                               fontWeight: FontWeight.w400, color: Colors.white),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
-                          child: Icon(
-                            Icons.star,
-                            color: Colors.yellow,
-                          ),
-                        )
                       ],
                     ),
                   )
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.all(2.0),
+                padding: const EdgeInsets.only(top: 5.0),
                 child: Container(
-                  height: 50,
+                  height: MediaQuery.of(context).size.height * 0.04,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -99,10 +89,10 @@ class _CardHomeButtonsState extends State<CardHomeButtons> {
                       Badge(
                         badgeContent: Text(
                           '3',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.white, fontSize: 8),
                         ),
-                        badgeColor: Colors.orangeAccent,
-                        position: BadgePosition.topEnd(top: -12, end: 2),
+                        badgeColor: Colors.orange[900],
+                        position: BadgePosition.topEnd(top: -10, end: -2),
                         elevation: 0.0,
                         child: _carBtn(Colors.teal[200], "98"),
                       ),
@@ -119,15 +109,27 @@ class _CardHomeButtonsState extends State<CardHomeButtons> {
               Container(
                 width: MediaQuery.of(context).size.width,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 1.0, horizontal: 8.0),
-                  child: Text(
-                    "Upcoming",
-                    style: TextStyle(
-                      color: HexColor('#EA5A01'),
-                    ),
-                  ),
-                ),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 1.0, horizontal: 8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Upcoming",
+                          style: TextStyle(
+                              color: HexColor('#EA5A01'), fontSize: 13),
+                        ),
+                        InkWell(
+                          onTap: () => setState(() {
+                            _iconColor = Colors.yellow;
+                          }),
+                          child: Icon(
+                            Icons.star,
+                            color: _iconColor,
+                          ),
+                        )
+                      ],
+                    )),
               )
             ],
           ),

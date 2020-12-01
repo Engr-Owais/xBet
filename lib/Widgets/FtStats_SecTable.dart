@@ -10,114 +10,190 @@ class _SecTableState extends State<SecTable> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
-          child: Row(
-            children: [
-              Text(
-                "FT Over/Under Goals",
-                style: TextStyle(color: Colors.orange),
+        Row(
+          children: [
+            Expanded(
+              flex: 2,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text(
+                      "FT Over/Under Goals",
+                      style: TextStyle(
+                        color: Colors.orange,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              SizedBox(
-                width: 60,
+            ),
+            Expanded(
+              child: Column(
+                children: [
+                  Text(
+                    "1.5",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ],
               ),
-              Text(
-                "1.5",
-                style: TextStyle(color: Colors.white),
+            ),
+            Expanded(
+              child: Column(
+                children: [
+                  Text(
+                    "2.5",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ],
               ),
-              SizedBox(
-                width: 60,
+            ),
+            Expanded(
+              child: Column(
+                children: [],
               ),
-              Text(
-                "2.5",
-                style: TextStyle(color: Colors.white),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Row(
-            children: [
-              Text(
-                "Over",
-                style: TextStyle(color: Colors.white),
-              ),
-              SizedBox(
-                width: 155,
-              ),
-              Container(
-                width: 40,
-                height: 30,
-                decoration: BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.circular(30)),
-                child: Center(
-                  child: Text(
-                    "95",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 35,
-              ),
-              Container(
-                width: 40,
-                height: 30,
-                decoration: BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.circular(30)),
-                child: Center(
-                  child: Text(
-                    "85",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ),
-            ],
-          ),
+        SizedBox(
+          height: 10,
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16.0),
-          child: Row(
-            children: [
-              Text(
-                "Under",
-                style: TextStyle(color: Colors.white),
-              ),
-              SizedBox(
-                width: 145,
-              ),
-              Container(
-                width: 40,
-                height: 30,
-                decoration: BoxDecoration(
-                    color: Colors.red, borderRadius: BorderRadius.circular(30)),
-                child: Center(
-                  child: Text(
-                    "10",
-                    style: TextStyle(color: Colors.white),
+        Row(
+          children: [
+            Expanded(
+              flex: 2,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text(
+                      "Over",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
-                ),
+                ],
               ),
-              SizedBox(
-                width: 35,
-              ),
-              Container(
-                width: 40,
-                height: 30,
-                decoration: BoxDecoration(
-                    color: Colors.red, borderRadius: BorderRadius.circular(30)),
-                child: Center(
-                  child: Text(
-                    "15",
-                    style: TextStyle(color: Colors.white),
+            ),
+            Expanded(
+              child: Column(
+                children: [
+                  Container(
+                    width: 40,
+                    height: 30,
+                    decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(30)),
+                    child: Center(
+                      child: Text(
+                        "95",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
-            ],
-          ),
+            ),
+            Expanded(
+              child: Column(
+                children: [
+                  Container(
+                    width: 40,
+                    height: 30,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white),
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.circular(30)),
+                    child: Center(
+                      child: Text(
+                        "10",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Column(
+                children: [],
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Row(
+          children: [
+            Expanded(
+              flex: 2,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text(
+                      "Under",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Column(
+                children: [
+                  Container(
+                    width: 40,
+                    height: 30,
+                    decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(30)),
+                    child: Center(
+                      child: Text(
+                        "95",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Column(
+                children: [
+                  Container(
+                    width: 40,
+                    height: 30,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white),
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.circular(30)),
+                    child: Center(
+                      child: Text(
+                        "10",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Column(
+                children: [],
+              ),
+            ),
+          ],
         ),
       ],
     );

@@ -10,62 +10,106 @@ class _ThirdTableState extends State<ThirdTable> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
-          child: Row(
-            children: [
-              Text(
-                "BTTS",
-                style: TextStyle(color: Colors.orange),
+        Row(
+          children: [
+            Expanded(
+              flex: 2,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text(
+                      "BTTS",
+                      style: TextStyle(
+                        color: Colors.orange,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              SizedBox(
-                width: 155,
+            ),
+            Expanded(
+              child: Column(
+                children: [
+                  Text(
+                    "Yes",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ],
               ),
-              Text(
-                "Yes",
-                style: TextStyle(color: Colors.white),
+            ),
+            Expanded(
+              child: Column(
+                children: [
+                  Text(
+                    "No",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ],
               ),
-              SizedBox(
-                width: 60,
+            ),
+            Expanded(
+              child: Column(
+                children: [],
               ),
-              Text(
-                "No",
-                style: TextStyle(color: Colors.white),
-              ),
-            ],
-          ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 10,
         ),
         Row(
           children: [
-            Container(
-              width: MediaQuery.of(context).size.width * 0.46,
-            ),
-            Container(
-              width: 40,
-              height: 30,
-              decoration: BoxDecoration(
-                  color: Colors.amberAccent,
-                  borderRadius: BorderRadius.circular(30)),
-              child: Center(
-                child: Text(
-                  "15",
-                  style: TextStyle(color: Colors.white),
-                ),
+            Expanded(
+              flex: 2,
+              child: Column(
+                children: [],
               ),
             ),
-            SizedBox(
-              width: 40,
+            Expanded(
+              child: Column(
+                children: [
+                  Container(
+                    width: 40,
+                    height: 30,
+                    decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(30)),
+                    child: Center(
+                      child: Text(
+                        "95",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            Container(
-              width: 40,
-              height: 30,
-              decoration: BoxDecoration(
-                  color: Colors.red, borderRadius: BorderRadius.circular(30)),
-              child: Center(
-                child: Text(
-                  "15",
-                  style: TextStyle(color: Colors.white),
-                ),
+            Expanded(
+              child: Column(
+                children: [
+                  Container(
+                    width: 40,
+                    height: 30,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white),
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.circular(30)),
+                    child: Center(
+                      child: Text(
+                        "10",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Column(
+                children: [],
               ),
             ),
           ],

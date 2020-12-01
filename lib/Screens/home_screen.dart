@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:edge_ui/IconsFont/my_flutter_app_icons.dart';
+import 'package:edge_ui/Widgets/HomeScreenTopContainer.dart';
 import 'package:edge_ui/Widgets/cardButtons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dropdown/flutter_dropdown.dart';
@@ -87,8 +88,8 @@ class _HomeScreenState extends State<HomeScreen> {
         colorFilter:
             ColorFilter.mode(Colors.grey.withOpacity(0.2), BlendMode.srcOver),
         child: Image(
-          image: AssetImage('assets/background.png'),
-          fit: BoxFit.fill,
+          image: AssetImage('assets/HeaderBackground.jpg'),
+          fit: BoxFit.cover,
         ),
       ),
       leading: IconButton(
@@ -139,122 +140,126 @@ class _HomeScreenState extends State<HomeScreen> {
               MediaQuery.of(context).padding.top),
           width: MediaQuery.of(context).size.width,
           child: SingleChildScrollView(
-            physics: const NeverScrollableScrollPhysics(),
             child: Column(
               children: [
                 Container(
-                  decoration: new BoxDecoration(
-                    color: Colors.grey.withOpacity(0.0),
-                  ),
-                  height: MediaQuery.of(context).size.height * 0.18,
-                  child: Column(
+                  height: MediaQuery.of(context).size.height * 0.07,
+                  width: MediaQuery.of(context).size.width,
+                  child: TopContainer(),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(4.0, 10.0, 0, 10.0),
+                  child: Row(
                     children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 50,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            RaisedButton(
-                              child: Text(
-                                "Upcoming",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              color: Colors.grey.withOpacity(0.2),
-                              onPressed: () {},
-                              elevation: 0.0,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                  side: BorderSide(
-                                      color: Colors.white, width: 0.1)),
-                            ),
-                            RaisedButton(
-                              child: Text(
-                                "Inplay",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              color: Colors.grey.withOpacity(0.2),
-                              onPressed: () {},
-                              elevation: 0.0,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                  side: BorderSide(
-                                      color: Colors.white, width: 0.1)),
-                            ),
-                            RaisedButton(
-                              child: Text(
-                                "Completed",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              color: Colors.grey.withOpacity(0.2),
-                              onPressed: () {},
-                              elevation: 0.0,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                  side: BorderSide(
-                                      color: Colors.white, width: 0.1)),
-                            ),
-                            RaisedButton.icon(
-                              icon: Icon(Icons.search, color: Colors.white),
-                              label: Text(
-                                "Search",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              color: Colors.grey.withOpacity(0.2),
-                              onPressed: () {},
-                              elevation: 0.0,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                  side: BorderSide(
-                                      color: Colors.white, width: 0.1)),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        child: Row(
+                      Expanded(
+                        flex: 2,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 10.0, horizontal: 24.0),
+                              padding: const EdgeInsets.only(left: 8.0),
                               child: Text(
                                 "Goals",
-                                style: TextStyle(color: Colors.amber[900]),
+                                style: TextStyle(
+                                  color: Colors.orange,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
-                            SizedBox(width: 150),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text(
-                                  "Corners",
-                                  style: TextStyle(color: Colors.amber[900]),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 10.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: List.generate(
+                                  4,
+                                  (index) => Text(
+                                    index == 0
+                                        ? "01.5"
+                                        : index == 1
+                                            ? "02.5"
+                                            : index == 2
+                                                ? "FH0.5"
+                                                : "BTTS",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  ),
                                 ),
-                                SizedBox(width: 50),
-                                Text(
-                                  "Cards",
-                                  style: TextStyle(color: Colors.amber[900]),
-                                ),
-                              ],
+                              ),
                             )
                           ],
                         ),
                       ),
                       Expanded(
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: 8,
-                          itemBuilder: (context, index) {
-                            return Padding(
-                              padding: const EdgeInsets.only(left: 24.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10.0),
                               child: Text(
-                                "0.15",
-                                style: TextStyle(color: Colors.white),
+                                "Corners",
+                                style: TextStyle(
+                                  color: Colors.orange,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            );
-                          },
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 10.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: List.generate(
+                                  2,
+                                  (index) => Text(
+                                    index == 0 ? "07.5" : "08.5",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
                         ),
-                      )
+                      ),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10.0),
+                              child: Text(
+                                "Cards",
+                                style: TextStyle(
+                                  color: Colors.orange,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 10.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: List.generate(
+                                  2,
+                                  (index) => Text(
+                                    index == 0 ? "02.5" : "03.5",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -270,11 +275,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Column(
-                  children: [
-                    CardHomeButtons(),
-                    CardHomeButtons(),
-                  ],
-                )
+                  children: List.generate(
+                    6,
+                    (index) => InkWell(
+                      child: CardHomeButtons(),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

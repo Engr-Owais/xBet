@@ -74,33 +74,40 @@ class _SubscriptionState extends State<Subscription> {
       ),
     );
     final bulletPoint = Container(
-      height: 20.0,
-      width: 20.0,
+      height: 10.0,
+      width: 10.0,
       decoration: new BoxDecoration(
-          color: Colors.orange, borderRadius: BorderRadius.circular(5)),
+          color: Colors.orange, borderRadius: BorderRadius.circular(1)),
     );
     Widget bulletText(String text) {
       return Padding(
-        padding: const EdgeInsets.only(top: 20),
-        child: Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 20),
-              child: bulletPoint,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20),
-              child: Text(
-                text,
-                maxLines: 3,
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
+        padding: const EdgeInsets.only(top: 8.0),
+        child: Container(
+          height: MediaQuery.of(context).size.height * 0.05,
+          width: MediaQuery.of(context).size.width,
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: bulletPoint,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  child: Text(
+                    text,
+                    maxLines: 3,
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       );
     }
@@ -322,7 +329,7 @@ class _SubscriptionState extends State<Subscription> {
                 Expanded(
                   flex: 3,
                   child: Container(
-                    height: MediaQuery.of(context).size.height * 0.5,
+                    height: MediaQuery.of(context).size.height * 0.6,
                     width: MediaQuery.of(context).size.width,
                     child: SingleChildScrollView(
                       child: Column(

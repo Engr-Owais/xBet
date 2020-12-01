@@ -38,6 +38,11 @@ dependencies:
 
   percent_indicator: "^2.1.7+2"
 
+  buttons_tabbar: ^1.0.1
+
+
+  
+
 
 
 
